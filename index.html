@@ -487,6 +487,318 @@
     .directions-grid { grid-template-columns: 1fr; }
   }
 
+
+  /* ---------- WinMosaic Expandable Card ---------- */
+  .project-showcase {
+    background: linear-gradient(160deg, rgba(122,20,20,0.12), var(--black-card) 60%);
+    border: 1px solid var(--line-strong);
+    border-left: 3px solid var(--blood-bright);
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    position: relative;
+    transition: border-color .3s;
+  }
+  .project-showcase:hover {
+    border-color: var(--blood-bright);
+  }
+  .project-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+  .tech-tag {
+    font-family: 'Anton', sans-serif;
+    font-size: 10.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bone);
+    background: rgba(236,228,220,0.06);
+    border: 1px solid var(--line);
+    padding: 3px 9px;
+  }
+  .tech-tag.highlight {
+    background: rgba(200,31,44,0.18);
+    border-color: var(--blood-bright);
+    color: var(--blood-glow);
+  }
+  .project-title {
+    font-size: clamp(28px, 3.2vw, 38px);
+    color: var(--bone);
+    margin-bottom: 8px;
+    line-height: 1;
+    letter-spacing: 0.02em;
+  }
+  .project-lead {
+    font-size: 14.5px;
+    color: var(--bone-dim);
+    line-height: 1.6;
+    margin-bottom: 18px;
+    max-width: 960px;
+  }
+  .project-actions-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .expand-toggle-btn {
+    background: transparent;
+    border: 1px solid var(--line-strong);
+    color: var(--bone);
+    font-family: 'Anton', sans-serif;
+    font-size: 12.5px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.25s ease;
+  }
+  .expand-toggle-btn:hover {
+    background: var(--blood-bright);
+    border-color: var(--blood-bright);
+    color: #fff;
+  }
+  .expand-toggle-btn .toggle-arrow {
+    display: inline-block;
+    transition: transform 0.35s ease;
+    font-size: 14px;
+    color: var(--blood-glow);
+  }
+  .expand-toggle-btn:hover .toggle-arrow {
+    color: #fff;
+  }
+  .expand-toggle-btn.open .toggle-arrow {
+    transform: rotate(180deg);
+  }
+  .project-links-compact {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .project-links-compact .cbtn {
+    padding: 9px 18px;
+    font-size: 11.5px;
+  }
+  .project-expandable-content {
+    display: none;
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  .project-expandable-content.open {
+    display: block;
+    opacity: 1;
+    margin-top: 20px;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+  .features-subhead {
+    font-family: 'Anton', sans-serif;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bone);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .feature-item {
+    background: var(--black-deep);
+    border: 1px solid var(--line);
+    padding: 10px 14px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    transition: border-color .2s;
+  }
+  .feature-item:hover {
+    border-color: var(--blood-bright);
+  }
+  .feature-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    line-height: 1;
+    margin-top: 1px;
+  }
+  .feature-text {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+  .feature-text strong {
+    font-weight: 700;
+    color: var(--bone);
+  }
+  .feature-text span {
+    color: var(--ash);
+  }
+  .credits-card {
+    background: var(--black-deep);
+    border: 1px solid rgba(200,31,44,0.3);
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .credits-head {
+    font-family: 'Anton', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blood-glow);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .credits-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 13px;
+  }
+  .credits-meta strong {
+    color: var(--bone);
+  }
+  .credits-meta span {
+    color: var(--ash);
+  }
+  .credits-quote {
+    border-left: 2px solid var(--blood-bright);
+    padding-left: 10px;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--bone-dim);
+  }
+  .more-projects-box {
+    margin-top: 20px;
+    padding: 18px 22px;
+    border: 1px dashed var(--line-strong);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 14px;
+    background: var(--black-deep);
+  }
+  .more-projects-text p {
+    font-size: 13.5px;
+    color: var(--ash);
+  }
+  .more-projects-text strong {
+    font-family: 'Anton', sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--bone);
+  }
+  .more-projects-box .cbtn {
+    padding: 10px 18px;
+    font-size: 11.5px;
+  }
+
+  @media (max-width:860px) {
+    .project-showcase { padding: 18px 16px; }
+    .features-grid { grid-template-columns: 1fr; }
+    .credits-card { padding: 12px 14px; }
+    .more-projects-box { flex-direction: column; align-items: flex-start; }
+    .project-actions-bar { flex-direction: column; align-items: flex-start; }
+  }
+
+
+  /* ---------- Compact Join Section ---------- */
+  .join {
+    padding: 60px 0 !important;
+  }
+  .join .work-head {
+    margin-bottom: 24px !important;
+  }
+  .join-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 32px !important;
+    align-items: start;
+  }
+  .join-info h3 {
+    font-size: 19px !important;
+    margin-bottom: 8px !important;
+  }
+  .join-info p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-bottom: 12px !important;
+  }
+  .directions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 6px !important;
+    margin: 10px 0 14px !important;
+  }
+  .dir-item {
+    padding: 8px 10px !important;
+    border-left: 3px solid var(--blood-bright);
+  }
+  .dir-title {
+    font-size: 11.5px !important;
+    margin-bottom: 2px !important;
+  }
+  .dir-desc {
+    font-size: 11.5px !important;
+    line-height: 1.3 !important;
+  }
+  .important-notice-box {
+    padding: 12px 14px !important;
+    margin-top: 12px !important;
+  }
+  .notice-header {
+    font-size: 11.5px !important;
+    margin-bottom: 6px !important;
+  }
+  .notice-text {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 6px !important;
+  }
+  .notice-profit {
+    padding-top: 6px !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+  .join-form {
+    padding: 22px 24px !important;
+    gap: 12px !important;
+  }
+  .fgroup {
+    gap: 4px !important;
+  }
+  .flabel {
+    font-size: 11px !important;
+  }
+  .finput, .fselect, .ftextarea {
+    padding: 8px 12px !important;
+    font-size: 13.5px !important;
+  }
+  .ftextarea {
+    rows: 2;
+  }
+
 </style>
 </head>
 <body>
@@ -562,14 +874,133 @@
   <div class="wrap">
     <div class="work-head reveal">
       <div class="eyebrow">Проекты</div>
-      <h2>Здесь будут<br>наши работы</h2>
+      <h2>Наши работы<br>и релизы</h2>
     </div>
-    <div class="empty-state reveal">
-      <div class="empty-hex"><span>?</span></div>
-      <p class="empty-title">Проектов пока нет</p>
-      <p class="empty-text">Мы только запускаемся — первые ролики, фильмы и, может быть, игры появятся здесь, как только будут готовы. Загляните позже или подпишитесь на новости ниже.</p>
+
+    <!-- WinMosaic Featured Project (Compact with Expand Arrow) -->
+    <div class="project-showcase reveal">
+      <div class="project-top">
+        <div class="project-tags">
+          <span class="tech-tag highlight">C# & WPF (.NET 8)</span>
+          <span class="tech-tag">WINDOWS 8.1 SHELL</span>
+          <span class="tech-tag">LIVE TILES</span>
+          <span class="tech-tag">DESKTOP APP</span>
+        </div>
+        <div class="badge" style="margin-top:0;">• РЕЛИЗ / ПРОЕКТ СТУДИИ</div>
+      </div>
+
+      <h3 class="project-title">WINMOSAIC</h3>
+      
+      <p class="project-lead">
+        Полнофункциональная современная оболочка начального экрана Windows 8.1, написанная на <strong>C# и WPF (.NET 8)</strong>. Она воссоздает легендарный интерфейс «Пуск» с максимальным вниманием к оригинальным деталям, плавности анимаций, звукам и возможностям кастомизации.
+      </p>
+
+      <!-- Панель действий: стрелка "Подробнее" и ссылки -->
+      <div class="project-actions-bar">
+        <button type="button" class="expand-toggle-btn" id="winmosaicToggleBtn" onclick="toggleWinMosaic()" aria-expanded="false">
+          <span class="btn-txt">Подробнее о проекте</span>
+          <span class="toggle-arrow">↓</span>
+        </button>
+
+        <div class="project-links-compact">
+          <a class="cbtn primary" href="https://amirislamov958-crypto.github.io/WinMosaic/" target="_blank" rel="noopener">
+            🌐 Сайт WinMosaic
+          </a>
+          <a class="cbtn" href="https://github.com/amirislamov958-crypto/WinMosaic" target="_blank" rel="noopener">
+            💻 GitHub
+          </a>
+        </div>
+      </div>
+
+      <!-- Раскрывающийся блок деталей (по умолчанию скрыт, открывается по клику) -->
+      <div class="project-expandable-content" id="winmosaicDetails">
+        <div class="features-subhead">
+          <span>Ключевые возможности:</span>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-item">
+            <span class="feature-icon">🚀</span>
+            <div class="feature-text">
+              <strong>Полноэкранный «Пуск»</strong> — <span>открытие по клавише Win или клику на панели задач на любом мониторе.</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">📐</span>
+            <div class="feature-text">
+              <strong>Живые плитки (Live Tiles)</strong> — <span>размеры Small, Medium, Wide, Large с 3D Flip анимациями, часами и погодой.</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">🎨</span>
+            <div class="feature-text">
+              <strong>Персонализация</strong> — <span>выбор оригинальных узоров и цветовых схем Windows 8.1 в реальном времени.</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">🛠</span>
+            <div class="feature-text">
+              <strong>Редактор Studio</strong> — <span>добавление своих плиток, 500+ иконок Metro Icons, настройка путей и параметров.</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">🖥</span>
+            <div class="feature-text">
+              <strong>Мультимониторность</strong> — <span>выбор конкретного монитора или открытие на том экране, где был клик.</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">🌐</span>
+            <div class="feature-text">
+              <strong>Мультиязычность</strong> — <span>полная поддержка русского и английского языков (RU / EN).</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">⏻</span>
+            <div class="feature-text">
+              <strong>Автозагрузка</strong> — <span>включение автозапуска через меню «Параметры» (Settings Charm) или трей.</span>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <span class="feature-icon">👑</span>
+            <div class="feature-text">
+              <strong>Основатели (Credits)</strong> — <span>специальная вкладка с информацией об авторах проекта.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Создатели -->
+        <div class="credits-card">
+          <div class="credits-head">
+            <span>👥 Создатели проекта</span>
+          </div>
+          <div class="credits-meta">
+            <div><span>Создатель:</span> <strong>Создал в одиночку by ПЕТЯ</strong></div>
+            <div><span>Студия:</span> <strong>ChaosMaster - Studio®</strong></div>
+          </div>
+          <div class="credits-quote">
+            «Всё, что создано в этом проекте — создано студией ChaosMaster - Studio® и создал в одиночку by ПЕТЯ.»
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- More projects notice -->
+    <div class="more-projects-box reveal">
+      <div class="more-projects-text">
+        <strong>Новые фильмы, скетчи и игры в разработке</strong>
+        <p>Мы постоянно готовим новые релизы. Следите за анонсами в наших соцсетях и на YouTube!</p>
+      </div>
       <a class="cbtn primary" href="#contact">Следить за новостями</a>
     </div>
+
   </div>
 </section>
 
@@ -958,6 +1389,21 @@
       appSuccess.classList.add('hidden');
       checkCooldown();
     });
+  }
+
+
+  // WinMosaic details expand/collapse toggle
+  function toggleWinMosaic() {
+    const details = document.getElementById('winmosaicDetails');
+    const btn = document.getElementById('winmosaicToggleBtn');
+    if (!details || !btn) return;
+    const isOpen = details.classList.toggle('open');
+    btn.classList.toggle('open', isOpen);
+    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    const txt = btn.querySelector('.btn-txt');
+    const arrow = btn.querySelector('.toggle-arrow');
+    if (txt) txt.textContent = isOpen ? 'Свернуть описание' : 'Подробнее о проекте';
+    if (arrow) arrow.textContent = isOpen ? '↑' : '↓';
   }
 
 </script>
